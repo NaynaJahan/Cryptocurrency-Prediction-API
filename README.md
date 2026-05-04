@@ -4,8 +4,6 @@ Predict tomorrow’s HIGH price (USD) for Ethereum (ETH) using the latest daily 
 
 The repository of the experimentations of trained models that will be loaded by the FastAPI app can be found here: [Cryptocurrency-Prediction-Data-Product-Experiments](https://github.com/NaynaJahan/Cryptocurrency-Prediction-Data-Product-Experiments)
 
-. https://github.com/NaynaJahan/Cryptocurrency-Prediction-Data-Product-Experiments
-
 ### Endpoints
 - `/`       : API description including model/meta summary and endpoints information
 - `/health/`: Health check (200 OK)
