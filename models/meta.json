@@ -1,0 +1,72 @@
+{
+  "task": "ETH next-day HIGH (log-ratio target)",
+  "target": "log(high[t+1]) - log(close[t])",
+  "features": [
+    "ret1",
+    "ret3",
+    "ret7",
+    "range_rel",
+    "rv7",
+    "vol_z7",
+    "rollmax7_rel",
+    "rollmin7_rel",
+    "vol_was_na"
+  ],
+  "feature_order": [
+    "ret1",
+    "ret3",
+    "ret7",
+    "range_rel",
+    "rv7",
+    "vol_z7",
+    "rollmax7_rel",
+    "rollmin7_rel",
+    "vol_was_na"
+  ],
+  "train_end": "2023-12-31",
+  "val_end": "2024-09-30",
+  "inference_formula": "pred_usd = close_t * exp(alpha * yhat)",
+  "model": "RandomForestRegressor",
+  "params": {
+    "bootstrap": true,
+    "ccp_alpha": 0.0,
+    "criterion": "squared_error",
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_leaf_nodes": null,
+    "max_samples": null,
+    "min_impurity_decrease": 0.0,
+    "min_samples_leaf": 2,
+    "min_samples_split": 4,
+    "min_weight_fraction_leaf": 0.0,
+    "monotonic_cst": null,
+    "n_estimators": 600,
+    "n_jobs": -1,
+    "oob_score": false,
+    "random_state": 42,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "metrics": {
+    "train": {
+      "rmse": 18.80414600727884,
+      "r2": 0.9997182285009468
+    },
+    "val": {
+      "rmse": 72.9774341306263,
+      "r2": 0.9795948309431373
+    },
+    "test": {
+      "rmse": 86.28750913004,
+      "r2": 0.9904896495809566
+    }
+  },
+  "source": {
+    "local_csv": "coinmarketcap",
+    "live_api": "kraken ETHUSD interval=1440"
+  },
+  "index_tz": "UTC",
+  "created_at": "2025-10-30T15:43:35.896703Z",
+  "amla_at1_version": "2025.0.3.1",
+  "notes": "Input X is computed at time t; convert prediction to USD via formula above."
+}
