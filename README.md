@@ -1,6 +1,6 @@
 # ETH next-day HIGH API
 
-Predict tomorrow’s HIGH price (USD) for Ethereum (ETH) using the latest daily candle and engineered features. Expose the prediction via a simple FastAPI service for your team’s Streamlit app.
+Predict tomorrow’s HIGH price (USD) for Ethereum (ETH) using the latest daily candle and engineered features. Expose the prediction via a simple FastAPI service for your team’s Streamlit app. The repository to the Streamlit app can be found here: (Cryptocurrency-Prediction-Data-Product-Streamlit)[https://github.com/NaynaJahan/Cryptocurrency-Prediction-Data-Product-Streamlit]
 
 ### Endpoints
 - `/`       : API description including model/meta summary and endpoints information
